@@ -1,0 +1,18 @@
+{
+  "name": "hyper-form",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx -y only-allow pnpm"
+  },
+  "keywords": [
+    "form",
+    "hyper-form"
+  ],
+  "author": "CH-Chang",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1"
+  }
+}
