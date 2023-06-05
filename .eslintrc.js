@@ -18,15 +18,13 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended'
   ],
-  plugins: [
-    '@typescript-eslint',
-    'react',
-    'deprecation'
-  ],
+  plugins: ['@typescript-eslint', 'react', 'deprecation'],
   settings: {
     react: {
       version: '18.2'
     }
   },
-  rules: {}
+  rules: {
+    'space-before-function-paren': 0
+  }
 }
