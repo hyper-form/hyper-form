@@ -5,10 +5,7 @@ export enum FormErrorCode {
 }
 
 export class FormError extends CustomError {
-  public constructor(
-    public code: FormErrorCode,
-    message?: string
-  ) {
+  public constructor(public code: FormErrorCode, message?: string) {
     super(message)
   }
 }

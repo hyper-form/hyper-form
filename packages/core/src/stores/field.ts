@@ -1,44 +1,63 @@
-import { create } from 'zustand'
-import { immer } from 'zustand/middleware/immer'
-import { Visibility, DefaultRemaining } from '../share/constants'
+import type { Visibility } from '../share/constants'
+import type { Set, State } from './share'
+import type { Draft } from 'immer'
+import { FieldErrorCode } from '../errors/field-error'
+import { FieldError } from '../errors/field-error'
+import { isField } from './share'
+import isUndefined from 'lodash-es/isUndefined'
+import head from 'lodash-es/head'
+import js from 'jsonpath'
 
-export interface Field {
-  value: string
-  visibility: Visibility
-  remaining: number
+const check = (
+  state: Draft<State>,
+  formName: string,
+  fieldName: string
+): void => {
+  if (isUndefined(state.forms[formName])) {
+    throw new FieldError(
+      FieldErrorCode.FORM_NOT_EXISTS,
+      `Form not exists for set field name: ${fieldName} for form name: ${formName}`
+    )
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const field = js.value(state.forms, fieldName)
+  if (isUndefined(field)) {
+    throw new FieldError(
+      FieldErrorCode.FORM_NOT_EXISTS,
+      `Form not exists for set field name: ${fieldName} for form name: ${formName}`
+    )
+  }
+
+  if (!isField(field)) {
+    throw new FieldError(
+      FieldErrorCode.FORM_NOT_EXISTS,
+      `Form not exists for set field name: ${fieldName} for form name: ${formName}`
+    )
+  }
 }
 
-interface FieldState {
-  field: Field
-}
+export const setValue =
+  (set: Set) => (formName: string, fieldName: string, value: string) => {
+    set((state) => {
+      check(state, formName, fieldName)
+      // TODO: 設定值
+    })
+  }
 
-interface FieldActions {
-  setValue: (value: string) => void
-  setVisibility: (visibility: Visibility) => void
-  setRemaining: (remaining: number) => void
-}
+export const setVisibility =
+  (set: Set) =>
+  (formName: string, fieldName: string, visibility: Visibility) => {
+    set((state) => {
+      check(state, formName, fieldName)
+      // TODO: 設定值
+    })
+  }
 
-export const useField = create(
-  immer<FieldState & FieldActions>((set) => ({
-    field: {
-      value: '',
-      visibility: Visibility.Visible,
-      remaining: DefaultRemaining
-    },
-    setValue: (value: string) => {
-      set((state) => {
-        state.field.value = value
-      })
-    },
-    setVisibility: (visibility: Visibility) => {
-      set((state) => {
-        state.field.visibility = visibility
-      })
-    },
-    setRemaining: (remaining: number) => {
-      set((state) => {
-        state.field.remaining = remaining
-      })
-    }
-  }))
-)
+export const setRemaining =
+  (set: Set) => (formName: string, fieldName: string, remaining: number) => {
+    set((state) => {
+      check(state, formName, fieldName)
+      // TODO: 設定值
+    })
+  }
