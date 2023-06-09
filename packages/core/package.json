@@ -26,24 +26,27 @@
     "@types/lodash-es": "^4.17.7",
     "@types/react": "^18.2.8",
     "babel-jest": "^29.5.0",
+    "immer": "^10.0.2",
     "inversify": "^6.0.1",
+    "inversify-react": "^1.1.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "jsonpath": "^1.1.1",
+    "lodash-es": "^4.17.21",
     "react": "^18.2.0",
+    "ts-custom-error": "^3.3.1",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "zustand": "^4.3.8"
   },
   "peerDependencies": {
-    "inversify": "^6.0.1",
-    "react": "^18.2.0",
-    "zustand": "^4.3.8"
-  },
-  "dependencies": {
     "immer": "^10.0.2",
+    "inversify": "^6.0.1",
     "inversify-react": "^1.1.0",
     "jsonpath": "^1.1.1",
     "lodash-es": "^4.17.21",
-    "ts-custom-error": "^3.3.1"
+    "react": "^18.2.0",
+    "ts-custom-error": "^3.3.1",
+    "zustand": "^4.3.8"
   }
 }
