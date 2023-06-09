@@ -4,7 +4,6 @@ import type { Draft } from 'immer'
 import { FieldError, FieldErrorCode } from '../errors/field-error'
 import { isField } from './share'
 import isUndefined from 'lodash-es/isUndefined'
-import head from 'lodash-es/head'
 import js from 'jsonpath'
 
 const check = (

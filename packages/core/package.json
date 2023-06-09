@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "father-build"
+    "build": "father-build",
+    "test": "jest"
   },
   "keywords": [
     "form",
@@ -13,12 +14,18 @@
   "author": "CH-Chang",
   "license": "MIT",
   "devDependencies": {
+    "@jest/types": "^29.5.0",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.2",
     "@types/jsonpath": "^0.2.0",
     "@types/lodash-es": "^4.17.7",
     "@types/react": "^18.2.8",
     "inversify": "^6.0.1",
+    "jest": "^29.5.0",
     "react": "^18.2.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
     "zustand": "^4.3.8"
   },
   "peerDependencies": {
