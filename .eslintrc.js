@@ -15,10 +15,11 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'standard-with-typescript',
+    'plugin:lodash/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended'
   ],
-  plugins: ['@typescript-eslint', 'react', 'deprecation'],
+  plugins: ['@typescript-eslint', 'react', 'lodash', 'deprecation'],
   settings: {
     react: {
       version: '18.2'

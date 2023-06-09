@@ -13,6 +13,10 @@
   "author": "CH-Chang",
   "license": "MIT",
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/jsonpath": "^0.2.0",
+    "@types/lodash-es": "^4.17.7",
+    "@types/react": "^18.2.8",
     "inversify": "^6.0.1",
     "react": "^18.2.0",
     "zustand": "^4.3.8"
@@ -21,5 +25,11 @@
     "inversify": "^6.0.1",
     "react": "^18.2.0",
     "zustand": "^4.3.8"
+  },
+  "dependencies": {
+    "inversify-react": "^1.1.0",
+    "jsonpath": "^1.1.1",
+    "lodash-es": "^4.17.21",
+    "ts-custom-error": "^3.3.1"
   }
 }
