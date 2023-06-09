@@ -25,9 +25,9 @@ export const HTextBox: FunctionComponent<HTextBoxProps> = (props) => {
       {state.visibility !== Visibility.Visible
         ? null
         : (
-        <FieldNameContextProvider value={fieldName}>
-          <TextBox {...{ ...omit(state, ['visibility']), ...props }} />
-        </FieldNameContextProvider>
+          <FieldNameContextProvider value={fieldName}>
+            <TextBox {...{ ...omit(state, ['visibility']), ...props }} />
+          </FieldNameContextProvider>
           )}
     </>
   )

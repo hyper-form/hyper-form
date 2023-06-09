@@ -7,7 +7,7 @@ import { HFormProvider } from '../../components/HFormProvider'
 import { HTextBox } from '../../components/HTextBox'
 import { HBind } from '../../components/HBind'
 
-const MockTextBox: TextBoxType = (props) => <input {...props}></input>
+const MockTextBox: TextBoxType = (props) => <input {...props} />
 
 test('測試文字框單層欄位名稱綁定', (): void => {
   const container = new Container()
@@ -15,7 +15,7 @@ test('測試文字框單層欄位名稱綁定', (): void => {
 
   render(
     <HFormProvider container={container}>
-      <HBind fieldName="A">
+      <HBind fieldName='A'>
         <HTextBox />
       </HBind>
     </HFormProvider>

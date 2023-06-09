@@ -14,10 +14,13 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'standard',
     'standard-with-typescript',
     'plugin:lodash/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'standard-jsx',
+    'standard-react'
   ],
   plugins: ['@typescript-eslint', 'react', 'lodash', 'deprecation'],
   settings: {
