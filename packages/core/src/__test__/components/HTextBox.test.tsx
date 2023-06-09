@@ -9,15 +9,17 @@ import { HBind } from '../../components/HBind'
 
 const MockTextBox: TextBoxType = (props) => <input {...props} />
 
-test('測試文字框單層欄位名稱綁定', (): void => {
-  const container = new Container()
-  container.bind<TextBoxType>(TextBoxSymbol).toFunction(MockTextBox)
+describe('測試文字框', () => {
+  test('測試文字框單層欄位名稱綁定', (): void => {
+    const container = new Container()
+    container.bind<TextBoxType>(TextBoxSymbol).toFunction(MockTextBox)
 
-  render(
-    <HFormProvider container={container}>
-      <HBind fieldName='A'>
-        <HTextBox />
-      </HBind>
-    </HFormProvider>
-  )
+    render(
+      <HFormProvider container={container}>
+        <HBind fieldName='A'>
+          <HTextBox />
+        </HBind>
+      </HFormProvider>
+    )
+  })
 })

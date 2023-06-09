@@ -10,5 +10,5 @@ module.exports = {
     ],
     '@babel/preset-typescript'
   ],
-  plugins: ['transform-es2015-modules-commonjs']
+  plugins: ['@babel/plugin-transform-modules-commonjs']
 }
