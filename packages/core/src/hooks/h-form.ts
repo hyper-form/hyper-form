@@ -1,4 +1,4 @@
-import { useForm } from '../stores/form'
+import { useForm } from '../stores'
 import { useEffect } from 'react'
 
 export const useHForm = (formName: string): void => {
