@@ -2,16 +2,21 @@
   "name": "@hyper-form/core",
   "version": "0.0.0",
   "description": "A ui form library core",
-  "scripts": {
-    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "test": "jest"
-  },
+  "author": "CH-Chang",
+  "license": "MIT",
   "keywords": [
     "form",
     "hyper-form"
   ],
-  "author": "CH-Chang",
-  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rimraf types && tsc --project tsconfig.type.json && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "test": "jest"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/plugin-transform-modules-commonjs": "^7.22.5",
@@ -30,6 +35,7 @@
     "jest-environment-jsdom": "^29.5.0",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
+    "reflect-metadata": "^0.1.13",
     "ts-custom-error": "^3.3.1",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1"
