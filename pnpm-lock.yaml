@@ -131,9 +131,6 @@ importers:
       '@types/jest':
         specifier: ^29.5.2
         version: 29.5.2
-      '@types/jsonpath':
-        specifier: ^0.2.0
-        version: 0.2.0
       '@types/lodash-es':
         specifier: ^4.17.7
         version: 4.17.7
@@ -143,9 +140,6 @@ importers:
       babel-jest:
         specifier: ^29.5.0
         version: 29.5.0(@babel/core@7.22.5)
-      immer:
-        specifier: ^10.0.2
-        version: 10.0.2
       inversify:
         specifier: ^6.0.1
         version: 6.0.1
@@ -158,9 +152,6 @@ importers:
       jest-environment-jsdom:
         specifier: ^29.5.0
         version: 29.5.0
-      jsonpath:
-        specifier: ^1.1.1
-        version: 1.1.1
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -176,6 +167,27 @@ importers:
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.2.5)(typescript@5.1.3)
+
+  packages/zustand:
+    devDependencies:
+      '@hyper-form/core':
+        specifier: workspace:^
+        version: link:../core
+      '@types/jsonpath':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@types/lodash-es':
+        specifier: ^4.17.7
+        version: 4.17.7
+      immer:
+        specifier: ^10.0.2
+        version: 10.0.2
+      jsonpath:
+        specifier: ^1.1.1
+        version: 1.1.1
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
       zustand:
         specifier: ^4.3.8
         version: 4.3.8(immer@10.0.2)(react@18.2.0)

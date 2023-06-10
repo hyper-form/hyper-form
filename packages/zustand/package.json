@@ -1,0 +1,32 @@
+{
+  "name": "@hyper-form/zustand",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "father-build"
+  },
+  "keywords": [
+    "form",
+    "hyper-form",
+    "zustand"
+  ],
+  "author": "CH-Chang",
+  "license": "MIT",
+  "devDependencies": {
+    "@hyper-form/core": "workspace:^",
+    "@types/jsonpath": "^0.2.0",
+    "@types/lodash-es": "^4.17.7",
+    "immer": "^10.0.2",
+    "jsonpath": "^1.1.1",
+    "lodash-es": "^4.17.21",
+    "zustand": "^4.3.8"
+  },
+  "peerDependencies": {
+    "@hyper-form/core": "workspace:^",
+    "immer": "^10.0.2",
+    "jsonpath": "^1.1.1",
+    "lodash-es": "^4.17.21",
+    "zustand": "^4.3.8"
+  }
+}
