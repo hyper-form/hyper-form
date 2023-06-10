@@ -1,8 +1,7 @@
-import type { Visibility } from '../share/constants'
-import type { Set, State } from './share'
+import type { Visibility, State } from '@hyper-form/core'
+import type { Set } from './share'
 import type { Draft } from 'immer'
-import { FieldError, FieldErrorCode } from '../errors/field-error'
-import { isField } from './share'
+import { FieldError, FieldErrorCode, isField } from '@hyper-form/core'
 import { isUndefined } from 'lodash-es'
 import js from 'jsonpath'
 

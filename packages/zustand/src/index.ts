@@ -1,4 +1,4 @@
-import type { State } from './share'
+import type { State } from '@hyper-form/core'
 import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
 import { devtools } from 'zustand/middleware/devtools'

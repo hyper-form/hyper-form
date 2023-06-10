@@ -1,7 +1,6 @@
 import type { Set } from './share'
-import { FormError, FormErrorCode } from '../errors/form-error'
-import { isUndefined } from 'lodash-es'
-import { omit } from 'lodash-es'
+import { FormError, FormErrorCode } from '@hyper-form/core'
+import { isUndefined, omit } from 'lodash-es'
 
 export const createForm = (set: Set) => (formName: string) => {
   set((state) => {
