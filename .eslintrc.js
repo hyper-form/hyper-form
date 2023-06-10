@@ -26,6 +26,7 @@ module.exports = {
     }
   },
   extends: [
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'standard',
@@ -40,7 +41,11 @@ module.exports = {
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:jest/all', 'plugin:testing-library/react']
+      extends: ['plugin:jest/all', 'plugin:testing-library/react'],
+      env: {
+        jest: true,
+        node: true
+      }
     }
   ]
 }

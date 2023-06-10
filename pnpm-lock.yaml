@@ -17,6 +17,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.1
         version: 2.26.1
+      '@types/jest':
+        specifier: ^29.5.2
+        version: 29.5.2
       '@types/node':
         specifier: ^20.2.5
         version: 20.2.5
