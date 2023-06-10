@@ -1,7 +1,7 @@
 import { HierarchicalFieldNamePrefix } from '../share/constants'
 import { FieldNameContext } from '../contexts/FieldNameContext'
 import { useContext } from 'react'
-import startsWith from 'lodash-es/startsWith'
+import { startsWith } from 'lodash-es'
 
 export const useHierarchicalFieldName = (propsFieldName: string): string => {
   const contextFieldName = useContext(FieldNameContext)

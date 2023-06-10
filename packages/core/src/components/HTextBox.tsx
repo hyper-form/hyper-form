@@ -7,7 +7,7 @@ import { Visibility } from '../share/constants'
 import { useHTextBox } from '../hooks/h-textbox'
 import { useFormName } from '../hooks/form-name'
 import { useFieldName } from '../hooks/field-name'
-import omit from 'lodash-es/omit'
+import { omit } from 'lodash-es'
 import React from 'react'
 
 export type HTextBoxProps = InputHTMLAttributes<HTMLInputElement>

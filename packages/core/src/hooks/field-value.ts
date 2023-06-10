@@ -1,4 +1,4 @@
-import constant from 'lodash-es/constant'
+import { constant } from 'lodash-es'
 
 export const useFieldValue = (formName: string, fieldName: string): string =>
   constant('')()

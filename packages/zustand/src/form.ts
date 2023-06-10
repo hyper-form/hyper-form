@@ -1,7 +1,7 @@
 import type { Set } from './share'
 import { FormError, FormErrorCode } from '../errors/form-error'
-import isUndefined from 'lodash-es/isUndefined'
-import omit from 'lodash-es/omit'
+import { isUndefined } from 'lodash-es'
+import { omit } from 'lodash-es'
 
 export const createForm = (set: Set) => (formName: string) => {
   set((state) => {

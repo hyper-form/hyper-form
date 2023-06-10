@@ -8,7 +8,7 @@ import { HForm } from '../../components/HForm'
 import { HBind } from '../../components/HBind'
 import { useFieldName } from '../../hooks/field-name'
 import { FormStoreSymbol } from '../../stores'
-import noop from 'lodash-es/noop'
+import { noop } from 'lodash-es'
 
 const MockFormStore: FormStore = {
   useForm: () => ({

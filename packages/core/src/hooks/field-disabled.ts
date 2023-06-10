@@ -1,4 +1,4 @@
-import constant from 'lodash-es/constant'
+import { constant } from 'lodash-es'
 
 export const useFieldDisabled = (
   formName: string,

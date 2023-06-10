@@ -3,7 +3,7 @@ import type { Set, State } from './share'
 import type { Draft } from 'immer'
 import { FieldError, FieldErrorCode } from '../errors/field-error'
 import { isField } from './share'
-import isUndefined from 'lodash-es/isUndefined'
+import { isUndefined } from 'lodash-es'
 import js from 'jsonpath'
 
 const check = (

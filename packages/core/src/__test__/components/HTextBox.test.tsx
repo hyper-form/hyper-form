@@ -8,7 +8,7 @@ import { HFormProvider } from '../../components/HFormProvider'
 import { HForm } from '../../components/HForm'
 import { HTextBox } from '../../components/HTextBox'
 import { HBind } from '../../components/HBind'
-import noop from 'lodash-es/noop'
+import { noop } from 'lodash-es'
 
 const MockTextBox: TextBoxType = (props) => (
   <input data-testid='ui' {...props} />

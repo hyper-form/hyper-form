@@ -36,6 +36,10 @@ module.exports = {
     'standard-jsx',
     'standard-react'
   ],
+  rules: {
+    // 允許只引入部分包
+    'lodash/import-scope': [2, 'member']
+  },
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
