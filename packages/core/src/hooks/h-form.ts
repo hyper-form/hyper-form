@@ -1,4 +1,4 @@
-import type { FormStore } from '../stores'
+import type { FormStore } from '../stores/form'
 import { useInjection } from 'inversify-react'
 import { useEffect } from 'react'
 import { FormStoreSymbol } from '../stores'
