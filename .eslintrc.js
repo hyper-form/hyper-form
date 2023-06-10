@@ -11,6 +11,20 @@ module.exports = {
     browser: true,
     es2021: true
   },
+  plugins: [
+    '@typescript-eslint',
+    'prettier',
+    'react',
+    'testing-library',
+    'jest',
+    'lodash',
+    'deprecation'
+  ],
+  settings: {
+    react: {
+      version: '18.2'
+    }
+  },
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -20,16 +34,13 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'standard-jsx',
-    'standard-react'
+    'standard-react',
+    'prettier'
   ],
-  plugins: ['@typescript-eslint', 'react', 'lodash', 'deprecation'],
-  settings: {
-    react: {
-      version: '18.2'
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:jest/all', 'plugin:testing-library/react']
     }
-  },
-  rules: {
-    'space-before-function-paren': 0,
-    '@typescript-eslint/space-before-function-paren': 0
-  }
+  ]
 }
