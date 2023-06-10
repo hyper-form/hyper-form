@@ -16,8 +16,8 @@ describe('測試欄位名稱鉤子', (): void => {
     const wrapper = ({ children }: { children: ReactNode }): ReactElement => {
       return (
         <HFormProvider container={container}>
-          <HForm formName="FormName">
-            <HBind fieldName="FieldName">{children}</HBind>
+          <HForm formName='FormName'>
+            <HBind fieldName='FieldName'>{children}</HBind>
           </HForm>
         </HFormProvider>
       )
@@ -35,9 +35,9 @@ describe('測試欄位名稱鉤子', (): void => {
     const wrapper = ({ children }: { children: ReactNode }): ReactElement => {
       return (
         <HFormProvider container={container}>
-          <HForm formName="FormName">
-            <HBind fieldName="Level1FieldName">
-              <HBind fieldName="Level2FormName">{children}</HBind>
+          <HForm formName='FormName'>
+            <HBind fieldName='Level1FieldName'>
+              <HBind fieldName='Level2FormName'>{children}</HBind>
             </HBind>
           </HForm>
         </HFormProvider>
@@ -56,9 +56,9 @@ describe('測試欄位名稱鉤子', (): void => {
     const wrapper = ({ children }: { children: ReactNode }): ReactElement => {
       return (
         <HFormProvider container={container}>
-          <HForm formName="FormName">
-            <HBind fieldName="Level1FieldName">
-              <HBind fieldName=".Level2FormName">{children}</HBind>
+          <HForm formName='FormName'>
+            <HBind fieldName='Level1FieldName'>
+              <HBind fieldName='.Level2FormName'>{children}</HBind>
             </HBind>
           </HForm>
         </HFormProvider>

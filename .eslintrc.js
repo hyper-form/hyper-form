@@ -13,7 +13,6 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    'prettier',
     'react',
     'testing-library',
     'jest',
@@ -35,8 +34,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'standard-jsx',
-    'standard-react',
-    'prettier'
+    'standard-react'
   ],
   overrides: [
     {

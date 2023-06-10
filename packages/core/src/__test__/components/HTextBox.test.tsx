@@ -8,15 +8,15 @@ import { HForm } from '../../components/HForm'
 import { HTextBox } from '../../components/HTextBox'
 import { HBind } from '../../components/HBind'
 
-const MockTextBox: TextBoxType = (props) => <input id="ui" {...props} />
+const MockTextBox: TextBoxType = (props) => <input id='ui' {...props} />
 
 const wrapper = ({ children }: { children: ReactNode }): ReactElement => {
   const container = new Container()
   container.bind<TextBoxType>(TextBoxSymbol).toFunction(MockTextBox)
   return (
     <HFormProvider container={container}>
-      <HForm formName="FormName">
-        <HBind fieldName="FieldName">{children}</HBind>
+      <HForm formName='FormName'>
+        <HBind fieldName='FieldName'>{children}</HBind>
       </HForm>
     </HFormProvider>
   )
