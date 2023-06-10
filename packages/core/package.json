@@ -1,10 +1,9 @@
 {
   "name": "@hyper-form/core",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A ui form library core",
   "scripts": {
-    "build": "father-build",
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "test": "jest"
   },
   "keywords": [
