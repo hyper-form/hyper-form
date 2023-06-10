@@ -1,10 +1,12 @@
-import type { RollupOptions } from 'rollup'
+import type { InputPluginOption, RollupOptions } from 'rollup'
 import license from 'rollup-plugin-license'
-import eslint from '@rbnlffl/rollup-plugin-eslint'
+import eslint from '@rollup/plugin-eslint'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import typescript from '@rollup/plugin-typescript'
 import jsx from 'acorn-jsx'
 import dts from 'rollup-plugin-dts'
+import del from 'rollup-plugin-delete'
+import summary from 'rollup-plugin-summary'
 import terser from '@rollup/plugin-terser'
 
 const jsConfig: RollupOptions = {
@@ -12,14 +14,17 @@ const jsConfig: RollupOptions = {
   acornInjectPlugins: [jsx()],
   plugins: [
     eslint({
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      filterInclude: 'src/**/*.(js|jsx|ts|tsx)'
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
-    peerDepsExternal(),
+    del({
+      targets: ['dist/*']
+    }) as InputPluginOption,
+    peerDepsExternal() as InputPluginOption,
     typescript({
       tsconfig: 'tsconfig.build.json'
     }),
-    terser()
+    terser(),
+    summary()
   ],
   treeshake: true,
   output: [
@@ -32,7 +37,7 @@ const jsConfig: RollupOptions = {
 }
 
 const typeConfig: RollupOptions = {
-  input: 'types/index.d.ts',
+  input: 'dist/types/index.d.ts',
   plugins: [
     dts(),
     license({
@@ -41,7 +46,8 @@ const typeConfig: RollupOptions = {
         content:
           'Copyright © <%= moment().format("YYYY")%> CH-Chang. All rights reserved.'
       }
-    })
+    }),
+    summary()
   ],
   output: [
     {
