@@ -44,12 +44,12 @@ export const setValue =
 
 export const setVisibility =
   (set: Set) =>
-  (formName: string, fieldName: string, visibility: Visibility) => {
-    set((state) => {
-      check(state, formName, fieldName)
+    (formName: string, fieldName: string, visibility: Visibility) => {
+      set((state) => {
+        check(state, formName, fieldName)
       // TODO: 設定值
-    })
-  }
+      })
+    }
 
 export const setRemaining =
   (set: Set) => (formName: string, fieldName: string, remaining: number) => {

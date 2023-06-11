@@ -6,7 +6,7 @@ export enum FieldErrorCode {
 }
 
 export class FieldError extends CustomError {
-  public constructor(public code: FieldErrorCode, message?: string) {
+  public constructor (public code: FieldErrorCode, message?: string) {
     super(message)
   }
 }
