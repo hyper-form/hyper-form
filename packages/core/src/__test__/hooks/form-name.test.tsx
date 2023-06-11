@@ -7,14 +7,7 @@ import { HFormProvider } from '../../components/HFormProvider'
 import { HForm } from '../../components/HForm'
 import { FormStoreSymbol } from '../../stores'
 import { useFormName } from '../../hooks/form-name'
-import { noop } from 'lodash-es'
-
-const MockFormStore: FormStore = {
-  useForm: () => ({
-    createForm: noop,
-    removeForm: noop
-  })
-}
+import { formStore } from '../mocks/stores/form'
 
 describe('測試表單名稱鉤子', () => {
   it('測試單層表單名稱鉤子', () => {
@@ -22,7 +15,7 @@ describe('測試表單名稱鉤子', () => {
 
     const wrapper = ({ children }: { children: ReactNode }): ReactElement => {
       const container = new Container()
-      container.bind<FormStore>(FormStoreSymbol).toConstantValue(MockFormStore)
+      container.bind<FormStore>(FormStoreSymbol).toConstantValue(formStore)
       return (
         <HFormProvider container={container}>
           <HForm formName='FormName'>{children}</HForm>

@@ -8,23 +8,13 @@ import { HFormProvider } from '../../components/HFormProvider'
 import { HForm } from '../../components/HForm'
 import { HTextBox } from '../../components/HTextBox'
 import { HBind } from '../../components/HBind'
-import { noop } from 'lodash-es'
-
-const MockTextBox: TextBoxType = (props) => (
-  <input data-testid='ui' {...props} />
-)
-
-const MockFormStore: FormStore = {
-  useForm: () => ({
-    createForm: noop,
-    removeForm: noop
-  })
-}
+import { TextBox } from '../mocks/ui/TextBox'
+import { formStore } from '../mocks/stores/form'
 
 const wrapper = ({ children }: { children: ReactNode }): ReactElement => {
   const container = new Container()
-  container.bind<TextBoxType>(TextBoxSymbol).toFunction(MockTextBox)
-  container.bind<FormStore>(FormStoreSymbol).toConstantValue(MockFormStore)
+  container.bind<TextBoxType>(TextBoxSymbol).toFunction(TextBox)
+  container.bind<FormStore>(FormStoreSymbol).toConstantValue(formStore)
   return (
     <HFormProvider container={container}>
       <HForm formName='FormName'>
