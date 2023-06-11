@@ -13,7 +13,7 @@ Hyper-Form is a form data processing component that separates data flow and UI s
 
 ## Requirement
 
-- React ^16.2
+- React ^18.2
 - Inversify ^6.0.1
 
 ## License
