@@ -51,6 +51,8 @@
     "eslint-plugin-testing-library": "^5.11.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
+    "markdownlint": "^0.29.0",
+    "markdownlint-cli": "^0.34.0",
     "prettier": "^2.8.8",
     "prettier-config-standard": "^5.0.0",
     "prettier-eslint": "^15.0.1",
