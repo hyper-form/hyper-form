@@ -1,7 +1,4 @@
 {
-  "*.ts": ["eslint"],
-  "*.js": ["eslint"],
-  "*.tsx": ["eslint"],
-  "*.jsx": ["eslint"],
+  "*.{js,jsx,ts,tsx,yml,yaml,json,jsonc,json5}": ["eslint"],
   "*.md": ["markdownlint \"**/*.md\""]
 }

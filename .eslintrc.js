@@ -1,24 +1,9 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: 'tsconfig.json',
-    tsconfigRootDir: __dirname,
-    sourceType: 'module',
-    ecmaVersion: 'latest',
-    createDefaultProgram: true
-  },
   env: {
     browser: true,
     es2021: true
   },
-  plugins: [
-    '@typescript-eslint',
-    'react',
-    'testing-library',
-    'jest',
-    'lodash',
-    'deprecation'
-  ],
+  plugins: ['react', 'testing-library', 'jest', 'lodash'],
   settings: {
     react: {
       version: '18.2'
@@ -26,10 +11,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'standard',
-    'standard-with-typescript',
     'plugin:lodash/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -48,6 +30,47 @@ module.exports = {
         jest: true,
         node: true
       }
+    },
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: 'tsconfig.json',
+        tsconfigRootDir: __dirname,
+        sourceType: 'module',
+        ecmaVersion: 'latest',
+        createDefaultProgram: true
+      },
+      plugins: [
+        '@typescript-eslint',
+        'react',
+        'testing-library',
+        'jest',
+        'lodash',
+        'deprecation'
+      ],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'standard',
+        'standard-with-typescript',
+        'plugin:lodash/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'standard-jsx',
+        'standard-react'
+      ]
+    },
+    {
+      files: ['*.yaml', '*.yml'],
+      parser: 'yaml-eslint-parser',
+      extends: ['plugin:yml/standard']
+    },
+    {
+      files: ['*.json', '*.json5', '*.jsonc'],
+      parser: 'jsonc-eslint-parser',
+      extends: ['plugin:jsonc/recommended-with-jsonc']
     }
   ]
 }
