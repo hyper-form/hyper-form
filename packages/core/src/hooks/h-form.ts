@@ -5,12 +5,10 @@ import { FormStoreSymbol } from '../stores'
 
 export const useHForm = (formName: string): void => {
   const store = useInjection<FormStore>(FormStoreSymbol)
-  const { useForm } = store
-  const { createForm, removeForm } = useForm()
   useEffect(() => {
-    createForm(formName)
+    store.createForm(formName)
     return () => {
-      removeForm(formName)
+      store.removeForm(formName)
     }
   })
 }

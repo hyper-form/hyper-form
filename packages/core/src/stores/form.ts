@@ -15,17 +15,40 @@ export const FormStoreSymbol = Symbol.for('FormStore')
 export interface FormStore {
   createForm: (formName: string) => void
   removeForm: (formName: string) => void
-  createField: (fieldName: string) => void
-  removeField: (fieldName: string) => void
-  createArrayField: (fieldName: string) => void
-  removeArrayField: (fieldName: string) => void
-  createArrayFieldItem: (fieldName: string, index: number) => void
-  removeArrayFieldItem: (fieldName: string, index: number) => void
-  changeValue: (fieldName: string, value: string) => void
-  changeVisibility: (fieldName: string, visibility: Visibility) => void
-  changeAlive: (fieldName: string, alive: number) => void
-  changeEditing: (fieldName: string, editing: boolean) => void
-  changeDirty: (fieldName: string, dirty: boolean) => void
+  createField: (formName: string, fieldName: string) => void
+  removeField: (formName: string, fieldName: string) => void
+  createArrayField: (formName: string, fieldName: string) => void
+  removeArrayField: (formName: string, fieldName: string) => void
+  createArrayFieldItem: (
+    formName: string,
+    fieldName: string,
+    index: number
+  ) => void
+  removeArrayFieldItem: (
+    formName: string,
+    fieldName: string,
+    index: number
+  ) => void
+  changeValue: (formName: string, fieldName: string, value: string) => void
+  changeVisibility: (
+    formName: string,
+    fieldName: string,
+    visibility: Visibility
+  ) => void
+  changeAlive: (formName: string, fieldName: string, alive: number) => void
+  changeEditing: (formName: string, fieldName: string, editing: boolean) => void
+  changeDirty: (formName: string, fieldName: string, dirty: boolean) => void
+  changeDisabled: (
+    formName: string,
+    fieldName: string,
+    disabled: boolean
+  ) => void
+  getValue: (formName: string, fieldName: string) => string
+  getVisibility: (formName: string, fieldName: string) => Visibility
+  getAlive: (formName: string, fieldName: string) => boolean
+  getEditing: (formName: string, fieldName: string) => boolean
+  getDirty: (formName: string, fieldName: string) => boolean
+  getDisabled: (formName: string, fieldName: string) => boolean
 }
 
 export interface Field {
@@ -34,6 +57,7 @@ export interface Field {
   alive: number
   editing: boolean
   dirty: boolean
+  disabled: boolean
 }
 
 export type FormData = Record<string, Field | FormData[]>
@@ -54,10 +78,12 @@ export const isField = (obj: any): obj is Field => {
   if (!('alive' in obj)) return false
   if (!('editing' in obj)) return false
   if (!('dirty' in obj)) return false
+  if (!('disabled' in obj)) return false
   if (!isString(obj.value)) return false
   if (!isNumber(obj.alive)) return false
   if (!isBoolean(obj.dirty)) return false
   if (!isBoolean(obj.editing)) return false
+  if (!isBoolean(obj.disabled)) return false
   if (
     !includes(
       [Visibility.Gone, Visibility.InVisible, Visibility.Visible],

@@ -22,6 +22,9 @@ export interface HTextBoxState {
 export const useHTextBox = (): HTextBoxState => {
   const formName = useFormName()
   const fieldName = useFieldName()
+  const visibility = useFieldVisibility(formName, fieldName)
+  const disabled = useFieldDisabled(formName, fieldName)
+  const value = useFieldValue(formName, fieldName)
 
   useEffect(() => {
     createField(fieldName)
@@ -30,9 +33,9 @@ export const useHTextBox = (): HTextBoxState => {
   return {
     formName,
     fieldName,
-    visibility: useFieldVisibility(formName, fieldName),
-    disabled: useFieldDisabled(formName, fieldName),
-    value: useFieldValue(formName, fieldName),
+    visibility,
+    disabled,
+    value,
     changeValue,
     changeEditing
   }
