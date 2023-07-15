@@ -6,7 +6,9 @@
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
     "postinstall": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test"
   },
   "keywords": [
     "form",
