@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "father-build"
-  },
+  "scripts": {},
   "keywords": [
     "form",
     "hyper-form",
