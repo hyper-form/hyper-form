@@ -16,24 +16,31 @@ export type HTextBoxProps = InputHTMLAttributes<HTMLInputElement>
 
 export const HTextBox: FunctionComponent<HTextBoxProps> = (props) => {
   const { onBlur, onFocus, onChange } = props
-  const { fieldName, value, visibility, disabled, changeValue, changeEditing } =
-    useHTextBox()
+  const {
+    formName,
+    fieldName,
+    value,
+    visibility,
+    disabled,
+    changeValue,
+    changeEditing
+  } = useHTextBox()
 
   const TextBox = useInjection<TextBoxType>(TextBoxSymbol)
 
   const handleFocus = (e: FocusEvent<HTMLInputElement, Element>): void => {
-    changeEditing(fieldName, false)
+    changeEditing(formName, fieldName, false)
     onFocus?.(e)
   }
 
   const handleBlur = (e: FocusEvent<HTMLInputElement, Element>): void => {
-    changeEditing(fieldName, true)
+    changeEditing(formName, fieldName, true)
     onBlur?.(e)
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const value = e.target.value
-    changeValue(fieldName, value)
+    changeValue(formName, fieldName, value)
     onChange?.(e)
   }
 

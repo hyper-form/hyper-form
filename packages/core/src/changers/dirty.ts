@@ -1,3 +1,7 @@
-export const changeDirty = (fieldName: string, dirty: boolean): void => {
+export const changeDirty = (
+  formName: string,
+  fieldName: string,
+  dirty: boolean
+): void => {
   console.log('')
 }

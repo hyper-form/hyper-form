@@ -1,7 +1,7 @@
-export const createField = (fieldName: string): void => {
+export const createField = (formName: string, fieldName: string): void => {
   console.log('')
 }
 
-export const removeField = (fieldValue: string): void => {
+export const removeField = (formName: string, fieldValue: string): void => {
   console.log('')
 }

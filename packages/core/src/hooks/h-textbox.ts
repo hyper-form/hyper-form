@@ -27,7 +27,7 @@ export const useHTextBox = (): HTextBoxState => {
   const value = useFieldValue(formName, fieldName)
 
   useEffect(() => {
-    createField(fieldName)
+    createField(formName, fieldName)
   }, [])
 
   return {
