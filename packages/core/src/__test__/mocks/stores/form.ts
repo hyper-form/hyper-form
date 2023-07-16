@@ -18,7 +18,7 @@ export const formStore: FormStore = {
   changeDirty: noop,
   changeDisabled: noop,
   getValue: constant(''),
-  getVisibility: (formName: string, fieldName: string) => Visibility.Visible,
+  getVisibility: constant(Visibility.Visible),
   getAlive: constant(true),
   getEditing: constant(true),
   getDirty: constant(true),
