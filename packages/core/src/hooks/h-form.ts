@@ -1,14 +1,11 @@
-import type { FormStore } from '../stores/form'
-import { useInjection } from 'inversify-react'
 import { useEffect } from 'react'
-import { FormStoreSymbol } from '../stores'
+import { createForm, removeForm } from '../changers/form'
 
 export const useHForm = (formName: string): void => {
-  const store = useInjection<FormStore>(FormStoreSymbol)
   useEffect(() => {
-    store.createForm(formName)
+    createForm(formName)
     return () => {
-      store.removeForm(formName)
+      removeForm(formName)
     }
   })
 }
