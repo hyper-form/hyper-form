@@ -1,6 +1,12 @@
 import type { Container } from 'inversify'
-import { setContainer } from '../share/container'
+import { useEffect } from 'react'
+import { setContainer, resetContainer } from '../share/container'
 
 export const useHFormProvider = (container: Container): void => {
-  setContainer(container)
+  useEffect(() => {
+    setContainer(container)
+    return (): void => {
+      resetContainer()
+    }
+  }, [])
 }

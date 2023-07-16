@@ -4,6 +4,10 @@ import { ContainerError, ContainerErrorCode } from '../errors/container-error'
 
 let container: null | Container = null
 
+export const resetContainer = (): void => {
+  container = null
+}
+
 export const setContainer = (containerArgs: Container): void => {
   if (!isNull(container)) {
     throw new ContainerError(
