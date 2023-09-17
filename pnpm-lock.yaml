@@ -227,12 +227,18 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      nanoid:
+        specifier: ^5.0.1
+        version: 5.0.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
       reflect-metadata:
         specifier: ^0.1.13
         version: 0.1.13
+      tarjan-graph:
+        specifier: ^3.0.0
+        version: 3.0.0
       ts-custom-error:
         specifier: ^3.3.1
         version: 3.3.1
@@ -9626,6 +9632,12 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
+  /nanoid@5.0.1:
+    resolution: {integrity: sha512-vWeVtV5Cw68aML/QaZvqN/3QQXc6fBfIieAlu05m7FZW2Dgb+3f0xc0TTxuJW+7u30t7iSDTV/j3kVI0oJqIfQ==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: true
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -11368,6 +11380,10 @@ packages:
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
+    dev: true
+
+  /tarjan-graph@3.0.0:
+    resolution: {integrity: sha512-sM1+1ZKnnCtTP9W0DHTMHTlej9buusVHaKiBVecc6tZpBffBeEpE4XdFz7WNs9H1zaYkcgm6MzfyXFxSV2S1rA==}
     dev: true
 
   /telejson@7.2.0:
