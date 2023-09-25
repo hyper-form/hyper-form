@@ -19,7 +19,7 @@ export class VisibilityMethodError extends CustomError {
     super(
       isUndefined(customMessage)
         ? VisibilityMethodErrorMessage[code]
-        : `Validate method error with custom error message: "${customMessage}"`
+        : `Visibility method error with custom error message: "${customMessage}"`
     )
   }
 }
