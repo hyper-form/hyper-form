@@ -1,4 +1,5 @@
 import type { Visibility } from '../share/constants'
+import { nanoid } from 'nanoid'
 import {
   isUndefined,
   map,
@@ -10,13 +11,16 @@ import {
   join,
   includes
 } from 'lodash-es'
-import { nanoid } from 'nanoid'
 import {
   VisibilityMethodError,
   VisibilityMethodErrorCode
 } from '../errors/visibility-method-error'
 
-export type VisibilityMethod = () => Visibility
+export type VisibilityMethod = (
+  fieldValue: string,
+  argumentFieldValue: string[],
+  ...extraArgument: unknown[]
+) => Visibility
 
 interface VisibilityMethodDetail {
   name: string
@@ -60,8 +64,7 @@ export const unregisterVisibilityMethod = (
 
   if (!exists && throwOnNotFound) {
     throw new VisibilityMethodError(
-      VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${methodId}`
+      VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS
     )
   }
 
@@ -106,8 +109,7 @@ export const accessVisibilityMethod = (methodId: string): VisibilityMethod => {
 
   if (isUndefined(methodDetail)) {
     throw new VisibilityMethodError(
-      VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${methodId}`
+      VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS
     )
   }
 
