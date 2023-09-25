@@ -15,9 +15,10 @@ export class ValidateMethodError extends CustomError {
     public code: ValidateMethodErrorCode,
     customMessage?: string
   ) {
-    const message = isUndefined(customMessage)
-      ? ValidateMethodErrorMessage[code]
-      : `Validate method error with custom error message: "${customMessage}"`
-    super(message)
+    super(
+      isUndefined(customMessage)
+        ? ValidateMethodErrorMessage[code]
+        : `Validate method error with custom error message: "${customMessage}"`
+    )
   }
 }
