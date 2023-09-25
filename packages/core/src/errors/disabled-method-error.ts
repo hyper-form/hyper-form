@@ -10,7 +10,7 @@ const DisabledMethodErrorMessage: Record<DisabledMethodErrorCode, string> = {
     'Specific validate method id have not been registered'
 }
 
-export class ValidateMethodError extends CustomError {
+export class DisabledMethodError extends CustomError {
   public constructor (
     public code: DisabledMethodErrorCode,
     customMessage?: string
