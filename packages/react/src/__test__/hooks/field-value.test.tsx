@@ -1,18 +1,17 @@
 import React from 'react'
 import type { ReactElement, ReactNode } from 'react'
-import type { FormStore } from '../../stores'
+import type { FormStore } from '@hyper-form/core'
 import { renderHook } from '@testing-library/react'
 import { Container } from 'inversify'
+import { FormStoreSymbol } from '@hyper-form/core'
 import { HFormProvider } from '../../components/HFormProvider'
 import { HForm } from '../../components/HForm'
 import { HBind } from '../../components/HBind'
-import { FormStoreSymbol } from '../../stores'
 import { formStore } from '../mocks/stores/form'
-import { useFieldVisibility } from '../../hooks/field-visibility'
-import { Visibility } from '../../share/constants'
+import { useFieldValue } from '../../hooks/field-value'
 
-describe('測試欄位可見鉤子', (): void => {
-  it('測試欄位可見鉤子取得欄位是否可見', (): void => {
+describe('測試欄位值鉤子', (): void => {
+  it('測試欄位值鉤子取得欄位值', (): void => {
     expect.assertions(1)
 
     const formName = 'FormName'
@@ -30,14 +29,11 @@ describe('測試欄位可見鉤子', (): void => {
       )
     }
 
-    const { result } = renderHook(
-      () => useFieldVisibility(formName, fieldName),
-      {
-        wrapper
-      }
-    )
+    const { result } = renderHook(() => useFieldValue(formName, fieldName), {
+      wrapper
+    })
     const { current } = result
 
-    expect(current).toBe(Visibility.Visible)
+    expect(current).toBe('')
   })
 })

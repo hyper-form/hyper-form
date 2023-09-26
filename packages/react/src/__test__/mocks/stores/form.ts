@@ -1,6 +1,6 @@
-import type { FormStore } from '../../../stores/form'
+import type { FormStore } from '@hyper-form/core'
 import { noop, constant } from 'lodash-es'
-import { Visibility } from '../../../share/constants'
+import { Visibility } from '@hyper-form/core'
 
 export const formStore: FormStore = {
   createForm: noop,

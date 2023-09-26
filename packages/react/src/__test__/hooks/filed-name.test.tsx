@@ -1,13 +1,13 @@
 import React from 'react'
 import type { ReactElement, ReactNode } from 'react'
-import type { FormStore } from '../../stores'
+import type { FormStore } from '@hyper-form/core'
 import { renderHook } from '@testing-library/react'
 import { Container } from 'inversify'
+import { FormStoreSymbol } from '@hyper-form/core'
 import { HFormProvider } from '../../components/HFormProvider'
 import { HForm } from '../../components/HForm'
 import { HBind } from '../../components/HBind'
 import { useFieldName } from '../../hooks/field-name'
-import { FormStoreSymbol } from '../../stores'
 import { formStore } from '../mocks/stores/form'
 
 describe('測試欄位名稱鉤子', (): void => {

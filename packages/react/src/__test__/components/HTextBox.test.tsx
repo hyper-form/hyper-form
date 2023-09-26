@@ -1,6 +1,6 @@
 import React, { type ReactNode, type ReactElement } from 'react'
 import type { TextBoxType } from '../../ui/TextBox'
-import { FormStoreSymbol, type FormStore } from '../../stores'
+import { FormStoreSymbol, type FormStore } from '@hyper-form/core'
 import { render, screen } from '@testing-library/react'
 import { Container } from 'inversify'
 import { TextBoxSymbol } from '../../ui/TextBox'

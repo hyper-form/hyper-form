@@ -1,4 +1,4 @@
-import { HierarchicalFieldNamePrefix } from '../share/constants'
+import { HierarchicalFieldNamePrefix } from '@hyper-form/core'
 import { FieldNameContext } from '../contexts/FieldNameContext'
 import { useContext } from 'react'
 import { startsWith } from 'lodash-es'

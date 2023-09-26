@@ -8,7 +8,7 @@ import type { TextBoxType } from '../ui/TextBox'
 import { useInjection } from 'inversify-react'
 import { FieldNameContextProvider } from '../contexts/FieldNameContext'
 import { TextBoxSymbol } from '../ui/TextBox'
-import { Visibility } from '../share/constants'
+import { Visibility } from '@hyper-form/core'
 import { useHTextBox } from '../hooks/h-textbox'
 import React from 'react'
 

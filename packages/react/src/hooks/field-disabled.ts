@@ -1,6 +1,6 @@
-import type { FormStore } from '../stores/form'
+import type { FormStore } from '@hyper-form/core'
 import { useInjection } from 'inversify-react'
-import { FormStoreSymbol } from '../stores/form'
+import { FormStoreSymbol } from '@hyper-form/core'
 
 export const useFieldDisabled = (
   formName: string,
