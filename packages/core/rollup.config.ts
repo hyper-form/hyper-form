@@ -3,7 +3,6 @@ import license from 'rollup-plugin-license'
 import eslint from '@rollup/plugin-eslint'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import typescript from '@rollup/plugin-typescript'
-import jsx from 'acorn-jsx'
 import dts from 'rollup-plugin-dts'
 import del from 'rollup-plugin-delete'
 import summary from 'rollup-plugin-summary'
@@ -11,10 +10,9 @@ import terser from '@rollup/plugin-terser'
 
 const jsConfig: RollupOptions = {
   input: 'src/index.ts',
-  acornInjectPlugins: [jsx()],
   plugins: [
     eslint({
-      extensions: ['.js', '.jsx', '.ts', '.tsx']
+      extensions: ['.js', '.ts']
     }),
     del({
       targets: ['dist/*']
