@@ -58,11 +58,14 @@ export const unregisterValidateMethod = (
 ): void => {
   const exists = !isUndefined(validateMethodDetails[methodId])
 
-  if (!exists && throwOnNotFound) {
-    throw new ValidateMethodError(
-      ValidateMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${methodId}`
-    )
+  if (!exists) {
+    if (throwOnNotFound) {
+      throw new ValidateMethodError(
+        ValidateMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
+        `Specific method id not exists, method id ${methodId}`
+      )
+    }
+    return
   }
 
   validateMethodDetails = pickBy(
@@ -81,14 +84,17 @@ export const unregisterValidateMethods = (
 
   const exists = size(notExistsMethodIds) === 0
 
-  if (!exists && throwOnNotFound) {
-    throw new ValidateMethodError(
-      ValidateMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${join(
-        notExistsMethodIds,
-        ','
-      )}`
-    )
+  if (!exists) {
+    if (throwOnNotFound) {
+      throw new ValidateMethodError(
+        ValidateMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
+        `Specific method id not exists, method id ${join(
+          notExistsMethodIds,
+          ','
+        )}`
+      )
+    }
+    return
   }
 
   validateMethodDetails = pickBy(

@@ -62,10 +62,13 @@ export const unregisterVisibilityMethod = (
 ): void => {
   const exists = !isUndefined(visibilityMethodDetails[methodId])
 
-  if (!exists && throwOnNotFound) {
-    throw new VisibilityMethodError(
-      VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS
-    )
+  if (!exists) {
+    if (throwOnNotFound) {
+      throw new VisibilityMethodError(
+        VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS
+      )
+    }
+    return
   }
 
   visibilityMethodDetails = pickBy(
@@ -84,14 +87,17 @@ export const unregisterVisibilityMethods = (
 
   const exists = size(notExistsMethodIds) === 0
 
-  if (!exists && throwOnNotFound) {
-    throw new VisibilityMethodError(
-      VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${join(
-        notExistsMethodIds,
-        ','
-      )}`
-    )
+  if (!exists) {
+    if (throwOnNotFound) {
+      throw new VisibilityMethodError(
+        VisibilityMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
+        `Specific method id not exists, method id ${join(
+          notExistsMethodIds,
+          ','
+        )}`
+      )
+    }
+    return
   }
 
   visibilityMethodDetails = pickBy(

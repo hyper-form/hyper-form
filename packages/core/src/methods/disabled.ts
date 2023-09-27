@@ -58,11 +58,14 @@ export const unregisterDisabledMethod = (
 ): void => {
   const exists = !isUndefined(disabledMethodDetails[methodId])
 
-  if (!exists && throwOnNotFound) {
-    throw new DisabledMethodError(
-      DisabledMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${methodId}`
-    )
+  if (!exists) {
+    if (throwOnNotFound) {
+      throw new DisabledMethodError(
+        DisabledMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
+        `Specific method id not exists, method id ${methodId}`
+      )
+    }
+    return
   }
 
   disabledMethodDetails = pickBy(
@@ -81,14 +84,17 @@ export const unregisterDisabledMethods = (
 
   const exists = size(notExistsMethodIds) === 0
 
-  if (!exists && throwOnNotFound) {
-    throw new DisabledMethodError(
-      DisabledMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
-      `Specific method id not exists, method id ${join(
-        notExistsMethodIds,
-        ','
-      )}`
-    )
+  if (!exists) {
+    if (throwOnNotFound) {
+      throw new DisabledMethodError(
+        DisabledMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS,
+        `Specific method id not exists, method id ${join(
+          notExistsMethodIds,
+          ','
+        )}`
+      )
+    }
+    return
   }
 
   disabledMethodDetails = pickBy(
