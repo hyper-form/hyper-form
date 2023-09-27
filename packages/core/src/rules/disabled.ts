@@ -21,8 +21,11 @@ interface DisabledRule {
   argumentFieldNames: string[]
 }
 
-type DisabledRuleRecord = Record<string, DisabledRule | undefined>
-type DisabledRuleFormRecord = Record<string, DisabledRuleRecord | undefined>
+export type DisabledRuleRecord = Record<string, DisabledRule | undefined>
+export type DisabledRuleFormRecord = Record<
+string,
+DisabledRuleRecord | undefined
+>
 
 let disabledRules: DisabledRuleFormRecord = {}
 

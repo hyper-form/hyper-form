@@ -21,8 +21,11 @@ export interface VisibilityRule {
   argumentFieldNames: string[]
 }
 
-type VisibilityRuleRecord = Record<string, VisibilityRule | undefined>
-type VisibilityRuleFormRecord = Record<string, VisibilityRuleRecord | undefined>
+export type VisibilityRuleRecord = Record<string, VisibilityRule | undefined>
+export type VisibilityRuleFormRecord = Record<
+string,
+VisibilityRuleRecord | undefined
+>
 
 let visibilityRules: VisibilityRuleFormRecord = {}
 
