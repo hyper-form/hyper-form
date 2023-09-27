@@ -7,7 +7,7 @@ export enum DisabledMethodErrorCode {
 
 const DisabledMethodErrorMessage: Record<DisabledMethodErrorCode, string> = {
   [DisabledMethodErrorCode.SPECIFIC_METHOD_ID_NOT_EXISTS]:
-    'Specific validate method id have not been registered'
+    'Specific disabled method id have not been registered'
 }
 
 export class DisabledMethodError extends CustomError {
