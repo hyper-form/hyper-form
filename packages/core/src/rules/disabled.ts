@@ -44,7 +44,7 @@ export const addDisabledRules = (
 ): string[] => {
   const ruleIds = map(rules, (_) => nanoid())
   disabledRules[formName] = assign(
-    disabledRules ?? {},
+    disabledRules[formName] ?? {},
     zipObject(ruleIds, rules)
   )
   return ruleIds
