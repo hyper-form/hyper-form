@@ -1,11 +1,21 @@
-import { debounce, merge, forEach, reduce } from 'lodash-es'
+import {
+  debounce,
+  merge,
+  forEach,
+  reduce,
+  chain,
+  includes,
+  isUndefined
+} from 'lodash-es'
 import {
   type VisibilityRuleRecord,
-  accessAllFormVisibilityRule
+  accessAllFormVisibilityRule,
+  type VisibilityRule
 } from '../rules/visibility'
 import {
   type ProcessorRecord,
-  accessAllFormProcessor
+  accessAllFormProcessor,
+  type Processor
 } from '../processor/processor'
 import { GuardError, GuardErrorCode } from '../errors/guard-error'
 import Graph from 'tarjan-graph'
@@ -15,15 +25,37 @@ const status: Record<string, boolean | undefined> = {}
 const tidyVisibilityPart = (
   visibilityRules: VisibilityRuleRecord
 ): Record<string, string[]> => {
-  // TODO: 完成可見部分整理
-  return {}
+  return chain(visibilityRules)
+    .flatMap('argumentFieldNames')
+    .uniq()
+    .keyBy()
+    .mapValues((t) =>
+      chain(visibilityRules)
+        .pickBy((r) => !isUndefined(r) && includes(r.argumentFieldNames, t))
+        .values()
+        .flatMap((r) => (r as VisibilityRule).fieldNames)
+        .uniq()
+        .value()
+    )
+    .value()
 }
 
 const tidyProcessorPart = (
   processors: ProcessorRecord
 ): Record<string, string[]> => {
-  // TODO: 完成處理器部分整理
-  return {}
+  return chain(processors)
+    .flatMap('triggerFieldNames')
+    .uniq()
+    .keyBy()
+    .mapValues((t) =>
+      chain(processors)
+        .pickBy((p) => !isUndefined(p) && includes(p.triggerFieldNames, t))
+        .values()
+        .flatMap((p) => (p as Processor).processFieldNames)
+        .uniq()
+        .value()
+    )
+    .value()
 }
 
 const emulate = (...parts: Array<Record<string, string[]>>): boolean => {
