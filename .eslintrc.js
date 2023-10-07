@@ -20,7 +20,8 @@ module.exports = {
   ],
   rules: {
     // 允許只引入部分包
-    'lodash/import-scope': [2, 'member']
+    'lodash/import-scope': [2, 'member'],
+    'lodash/chaining': [2, 'always']
   },
   overrides: [
     {
