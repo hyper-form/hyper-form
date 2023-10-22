@@ -23,6 +23,10 @@ jobs:
           command: |
             pnpm install
       - run:
+          name: 'Run build'
+          command: |
+            pnpm build
+      - run:
           name: 'Run unit tests'
           command: |
             pnpm test
