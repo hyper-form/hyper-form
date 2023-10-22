@@ -38,5 +38,7 @@ jobs:
 
 workflows:
   ci:
+    when:
+      equal: [<< pipeline.trigger_source >>, api]
     jobs:
       - ci
