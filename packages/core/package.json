@@ -1,9 +1,10 @@
 {
   "name": "@hyper-form/core",
   "version": "0.0.0",
-  "description": "A ui form library core",
+  "description": "A ui form library for core part",
   "author": "CH-Chang",
   "license": "MIT",
+  "repository": "https://github.com/hyper-form/hyper-form",
   "keywords": [
     "form",
     "hyper-form"

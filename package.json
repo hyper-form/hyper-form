@@ -1,8 +1,8 @@
 {
-  "name": "hyper-form",
+  "name": "@hyper-form/repository",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A ui form library",
+  "repository": "https://github.com/hyper-form/hyper-form",
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
     "postinstall": "husky install",
