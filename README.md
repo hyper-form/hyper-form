@@ -2,6 +2,7 @@
 
 ![License](https://img.shields.io/github/license/CH-Chang/hyper-form)
 ![Github last commit (branch)](https://img.shields.io/github/last-commit/CH-Chang/hyper-form/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hyper-form/hyper-form/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hyper-form/hyper-form/tree/main)
 
 [English](README_EN.md) | 繁體中文
 
