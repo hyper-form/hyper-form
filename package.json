@@ -9,10 +9,10 @@
     "commit": "cz",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
-    "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
+    "clear": "rimraf -g 'packages/*/node_modules' && rimraf node_modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "changeset publish --registry=https://registry.npmjs.com"
+    "release": "changeset publish"
   },
   "keywords": [
     "form",
