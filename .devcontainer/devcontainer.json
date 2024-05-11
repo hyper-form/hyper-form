@@ -1,0 +1,33 @@
+{
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node",
+  "postCreateCommand": "bash -i -c 'nvm install 18.16.0 && nvm use 18.16.0 && npm i -g pnpm@8.15.8'",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "kisstkondoros.vscode-gutter-preview",
+        "oderwat.indent-rainbow",
+        "xabikos.JavaScriptSnippets",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "rvest.vs-code-prettier-eslint",
+        "stylelint.vscode-stylelint",
+        "wayou.vscode-todo-highlight",
+        "Gruntfuggly.todo-tree",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "formulahendry.auto-close-tag",
+        "ecmel.vscode-html-css"
+      ]
+    }
+  }
+}
