@@ -1,6 +1,6 @@
 {
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node",
-  "postCreateCommand": "bash -i -c 'nvm install 18.16.0 && nvm use 18.16.0 && npm i -g pnpm@8.15.8'",
+  "postCreateCommand": "bash -i -c 'nvm install 20.15.0 && nvm use 20.15.0 && npm i -g pnpm'",
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
   ],
